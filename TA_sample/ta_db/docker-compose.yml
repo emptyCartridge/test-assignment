@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  db222:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user1
+      POSTGRES_PASSWORD: password2
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    restart: always
+
+
+
